@@ -6,16 +6,16 @@ class CommonStyles {
     return InputDecoration(
         hintText: hint,
         hintStyle: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontWeight: FontWeight.w300
         ),
         contentPadding: EdgeInsets.symmetric(vertical: 5),
         enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.white)
+            borderSide: BorderSide(color: Colors.black)
         ),
         focusedBorder: UnderlineInputBorder(
             borderSide: BorderSide(
-                color: Colors.white,
+                color: Colors.black,
                 width: 2
             )
         )
@@ -110,6 +110,16 @@ class CommonStyles {
           ],
         ),
       ),
+    );
+  }
+
+  static pinOTPCodeDecoration() {
+    return BoxDecoration(
+      color: Colors.blueAccent,
+      borderRadius: BorderRadius.circular(10.0),
+      border: Border.all(
+        color: Colors.grey,
+    )
     );
   }
 }

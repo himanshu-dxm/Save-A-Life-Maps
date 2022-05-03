@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:save_a_life_maps/widgets/common_styles.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class Login_Page extends StatefulWidget {
-  const Login_Page({Key? key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
-  State<Login_Page> createState() => _Login_PageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _Login_PageState extends State<Login_Page> {
+class _LoginPageState extends State<LoginPage> {
+
+  GlobalKey<ScaffoldState> _globalKey = new GlobalKey();
+
+  TextEditingController phoneNumberController = new TextEditingController(text: "12345");
 
   FirebaseFirestore firestore = FirebaseFirestore.instance;
   CollectionReference users = FirebaseFirestore.instance.collection('users');
@@ -24,6 +27,9 @@ class _Login_PageState extends State<Login_Page> {
     ).then((value) => print("User Added"))
         .catchError((error)=>print("Error "));
   }
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,13 +41,19 @@ class _Login_PageState extends State<Login_Page> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
+              margin: EdgeInsets.all(8),
+              padding: EdgeInsets.all(8),
               child: TextFormField(
+                key: _globalKey,
                 decoration: CommonStyles.textFieldStyle("Enter Phone"),
-                initialValue: '',
+                keyboardType: TextInputType.number,
+                controller: phoneNumberController,
               ),
             ),
-            SizedBox(height: 16,),
+            SizedBox(height: 8,),
             Container(
+              margin: EdgeInsets.all(8),
+              padding: EdgeInsets.all(8),
               child: ElevatedButton(
                 onPressed: () {
                   print("Hi");

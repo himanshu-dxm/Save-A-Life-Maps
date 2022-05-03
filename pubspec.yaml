@@ -26,6 +26,8 @@ dependencies:
   shared_preferences: ^2.0.13
   firebase_storage: ^10.2.14
   google_fonts: ^2.3.2
+  firebase_auth: ^3.3.16
+#  pinput: ^2.2.7
   flutter:
     sdk: flutter
 

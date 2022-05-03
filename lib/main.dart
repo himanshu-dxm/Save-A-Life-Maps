@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:save_a_life_maps/screens/login.dart';
+// import 'package:save_a_life_maps/screens/login.dart';
+import 'package:save_a_life_maps/screens/otpScreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Login_Page(),
+      home: OTPScreen(phoneNumber: "9934164540",),
     );
   }
 }
